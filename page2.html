@@ -1,0 +1,33 @@
+<!-- Page 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Page</title>
+    <link rel="stylesheet" href="page.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Enjoy the Music</h1>
+        <div class="music-player">
+            <div class="disc" id="disc"></div>
+            <audio id="song" src="song.mp3"></audio>
+        </div>
+        <button onclick="playMusic()">Play Song</button>
+        <button onclick="window.location.href='page3.html'">Next Page</button>
+    </div>
+    <script>
+        function playMusic() {
+            const song = document.getElementById('song');
+            const disc = document.getElementById('disc');
+            
+            if (song.paused) {
+                song.play();
+                disc.classList.add('spin');
+            } else {
+                song.pause();
+                disc.classList.remove('spin');
+            }
+        }
+    </script>
